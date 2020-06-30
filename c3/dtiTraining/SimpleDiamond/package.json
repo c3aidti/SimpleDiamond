@@ -1,0 +1,6 @@
+{
+  "name": "SimpleDiamond",
+  "description": "SimpleDiamond Practice for DTI Team",
+  "author": "Yifang Zhang",
+  "dependencies": ["standardDependencies"]
+}

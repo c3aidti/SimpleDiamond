@@ -1,0 +1,11 @@
+
+
+/**
+* 
+*/
+type TransformCanonicalSimpleDiamondToSimpleDiamond mixes SimpleDiamond transforms CanonicalSimpleDiamond{
+	
+	// more human understandable way for the shape of the current diamond, using x - length, y - width, z - height
+	shape: ~ expression "concat('length: ', string(x), ', width: ', string(y), ', height: ', string(z), '.')"
+
+}

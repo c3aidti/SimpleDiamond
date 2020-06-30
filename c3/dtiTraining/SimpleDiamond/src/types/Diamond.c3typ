@@ -1,0 +1,63 @@
+/*
+* Copyright 2009-2019 C3, Inc. All Rights Reserved.
+~*/
+
+/**
+* LightBulb.c3typ - 
+* A single light bulb.
+*/
+
+/**
+* A C3 Type is akin to a class in Java, and describes data fields, operations and static functions that can be called on the type by one or more applications. The difference is that a C3 Type is not tied to any particular programming language. 
+* C3 Type could represent any entity, such as an apartment, a horse, a sensor measurement, or a machine learning prediction model.
+*/
+
+/**
+* In our SimpleDiamond project, Diamond type is the "base" type for {@link SimpleDiamond} type.
+* If you remove the inherited type in current document by unselecting the "Inherited" fields and methods on the right top corner of the console, you would be able to see the fields just like what you declared in the c3typ file.
+*/
+
+/**
+* Some notes for each keywords in the delaration of Diamond type:
+* 1. "extendable": this keyword makes Diamond type inherting from {@link Extendable} type and becomes a "base" type that other types (such as {@link SimpleDiamond} Type) could extend on this, which means those inherted types can inherit all fields and methods from Diamond type.
+* 2. "entity": this keyword makes Diamond inherting from {@link Persistable} type and becomes a data table that will be stored in the "DIAMOND" table in the database. This also means LightBulb will inherit all fields and methods from {@link Persistable}, such as the field "id".
+* 3. "schema name": this two keywords are the result of "entity" keyword, and are representing the table name of Diamond in database.
+*/
+
+extendable entity type Diamond schema name "DIAMOND" {
+ // index of the diamond
+ id: string
+
+ // Carat measurement of current diamond, details could be find at wiki:
+ // https://en.wikipedia.org/wiki/Carat_(mass)
+ caratMeasurement: double
+
+ // The cut condition of current diamond.
+ // Currently, we have Fair < Good < Very Good < Premium < Ideal 
+ cutLevel: string enum('Fair', 'Good', 'Very Good', 'Premium', 'Ideal')
+ 
+ // The color of current diamond.
+ // Currently, we have D < E < F < G < H < I < J
+ colorLevel: string enum('D', 'E', 'F', 'G', 'H', 'I', 'J')
+
+ // The clarity of current diamond in strings.
+ clarityLevel: string
+
+ // Depth
+ depthLevel: double
+
+ // Table
+ tableLevel: double
+
+ // price
+ priceDollar: double
+
+ // x-axis length of the diamond
+ xAxis: double
+
+ // y-axis length of the diamond
+ yAxis: double
+
+ // z-axis length of the diamond
+ zAxis: double
+}

@@ -1,0 +1,11 @@
+{
+    "id": "CanonicalSimpleDiamond",
+    "name": "CanonicalSimpleDiamond",
+    "source": {
+      "typeName": "CanonicalSimpleDiamond"
+    },
+    "sourceSystem": {
+          "id": "Legacy"
+    }
+ }
+  

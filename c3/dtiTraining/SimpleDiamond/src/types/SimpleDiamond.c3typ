@@ -1,0 +1,37 @@
+/**
+* 
+*/
+
+/**
+* As mentioned in {@link Diamond} Type, SimpleDiamond type is a type that extends on Diamond Type. Therefore, SimpleDiamond contains every field and method from Diamond Type, such as id (from {@link Persistable}), price (from Diamond), etc.. 
+*/
+
+/**
+* "mixes" is like sub-classing in Java or C++, but users can mix multiple c3types.
+*/
+
+/**
+* Since SimpleDiamond extends Diamond, it will not create a new table, but assign a key using "type key" keywords. In database, column names of Diamond type will be prefixed as "SIM_DIAMOND", and concatenated by "_".
+*/
+
+/**
+* The method "recalculatingDepth" is defined at SimpleDiamond.js. It is a method that SimpleDiamond contains. Users can call it by typing the example in the console or jupyter: "SimpleDiamond.recalculatingDepth('100')".
+* More details on method "recalculatingDepth":
+* 1. "diamondID: string" - parameter name: diamondID; type of the parameter: string
+* 2. "double" - return type will be double
+* 3. "js" - this function is written in javascript
+* 4. "server" - this function is running on server which is close to the original dataset. If you want to learn more on this (other options are "client" and "all"), please following on this URL for method: https://developer.c3.ai/docs/7.12.0/guide/guide-c3aisuite-basic/defining-methods
+*/
+
+// 
+
+entity type SimpleDiamond extends Diamond mixes MetricEvaluatable type key "SIM_DIAMOND"{
+	
+	// more human understandable way for the shape of the current diamond
+	shape: string
+
+	// re-calculating the depth value of a certain diamond, you will see that diamond depth value is actually 100x more than actual value.
+	// you can run: `SimpleDiamond.recalculatingDepth('100')` vs. `c3Grid(SimpleDiamond.fetch({filter:"id == '100'"}))` to do the comparison.
+	recalculatingDepth: function (diamondID: string) : double js server
+	
+}

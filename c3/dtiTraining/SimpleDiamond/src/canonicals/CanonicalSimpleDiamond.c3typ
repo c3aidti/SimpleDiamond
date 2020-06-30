@@ -1,0 +1,40 @@
+
+/**
+* This type represents the raw data that will represent {@link SmartDiamond} information.
+* 
+*/
+
+/**
+* The Canonical is a standard format for representing and receiving data. Users could treat it like a schema of a dataset.
+*/
+
+/**
+* The Canonical in C3 usually contains the following:
+* 1. mixes Canonical<CanonicalSimpleDiamond> - every Canonical type mixes with Canonical Type, and in "<>" for itself.
+* 2. When users open the source file SimpleDiamond.csv, every field will make sense. 
+* 3. If you look for the details on each data type, go {@link PrimitiveType}.
+*/
+
+type CanonicalSimpleDiamond mixes Canonical<CanonicalSimpleDiamond> {
+ id: string
+ // This represents the diamond carat weight of a {@link Diamond}
+ carat: double
+ // This represents the cut type of a {@link Diamond}
+ cut: string
+ // This represents the color of a {@link Diamond}
+ color: string
+ // This represents the clarity level of a {@link Diamond}
+ clarity: string
+ // This represents the depth of a {@link Diamond}
+ depth: double
+ // this represents the table of a {@link Diamond}
+ table: double
+ // This represents the price of a {@link Diamond}
+ price: double
+ // This represents the x axis length in mm of a {@link Diamond}
+ x: double
+ // This represents the y axis length in mm of a {@link Diamond}
+ y: double
+ // This represents the z axis length in mm of a {@link Diamond}
+ z: double
+}
