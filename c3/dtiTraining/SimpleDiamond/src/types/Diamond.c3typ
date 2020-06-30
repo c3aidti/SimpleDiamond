@@ -1,12 +1,3 @@
-/*
-* Copyright 2009-2019 C3, Inc. All Rights Reserved.
-~*/
-
-/**
-* LightBulb.c3typ - 
-* A single light bulb.
-*/
-
 /**
 * A C3 Type is akin to a class in Java, and describes data fields, operations and static functions that can be called on the type by one or more applications. The difference is that a C3 Type is not tied to any particular programming language. 
 * C3 Type could represent any entity, such as an apartment, a horse, a sensor measurement, or a machine learning prediction model.
